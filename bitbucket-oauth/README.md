@@ -75,6 +75,16 @@ Examples
 These group names can be used in *Jenkins Matrix-based* security to give
 fine grained access control based on the users team access in Bitbucket.
 
+Note for BitBucket Cloud API 2.0 where teams are deprected:
+[from Cris](https://community.atlassian.com/t5/Marketplace-Apps-Integrations/Bit-bucket-group-access-in-jenkins/qaq-p/811477)
+The diagnostic page at <jenkins host/whoAmI will only list these three groups for your team if configured.
+
+If you are an admin you get admin, if you are a user in a group that is allowed to create new repositories you appear to be a "Contributor".  If you are just a member of a group, you are a "member" of that team.
+
+Sadly it doesn't appear to recognise or use group names within a team which is unfortunate as that is exactly what we want to do.
+
+It would be useful if the OAUTH authentication return specific group membership as well and then jenkins could use it. 
+
 ![](docs/images/matrix_based_security.png)
 
 # Configure plugin via Groovy script
